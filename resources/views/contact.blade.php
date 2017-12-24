@@ -83,10 +83,10 @@
 
                     </div>
 
-                    <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 find-us">
                         <h2 class="title green italic font-weight-700">Find us</h2>
                         <ul class="row">
-                            <li class="col-lg-3">
+                            <li class="col-md-6 col-lg-3">
                                 <ul>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Charcutier Aoun Beit Merry</a></p></li>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Charcutier Aoun Dekwaneh</a></p></li>
@@ -97,7 +97,7 @@
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Charcutier Aoun Saloumi</a></p></li>
                                 </ul>
                             </li>
-                            <li class="col-lg-3">
+                            <li class="col-md-6 col-lg-3">
                                 <ul>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Charcutier Aoun Jisr El Basha</a></p></li>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Broumana High School</a></p></li>
@@ -108,7 +108,7 @@
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Star Market - Kaslik</a></p></li>
                                 </ul>
                             </li>
-                            <li class="col-lg-3">
+                            <li class="col-md-6 col-lg-3">
                                 <ul>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Trini Market - Sahel Alma</a></p></li>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">الشرطة العسكرية - جسر الباشا</a></p></li>
@@ -120,7 +120,7 @@
 
                                 </ul>
                             </li>
-                            <li class="col-lg-3">
+                            <li class="col-md-6 col-lg-3">
                                 <ul>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Pharmacy Roy - Mansourieh</a></p></li>
                                     <li class=""><span class="dot"></span><p><a href="" onclick="return false">Sparc Twin care - Aoukar</a></p></li>

@@ -83,7 +83,7 @@ jQuery(function ($) {
 		if (isEmpty(Cookies.get('wishlist'))) {
 			var wishlist = [];
 			wishlist.push(product);
-			Cookies.set('wishlist', JSON.stringify(wishlist) , { expires: 7, path: '/' });
+			Cookies.set('wishlist', JSON.stringify(wishlist), {expires: 7, path: '/'});
 			addRemoveFromToWishListAnim(click);
 			addItemHtmlToWishList(product, wishlist);
 			console.log('list created');
@@ -122,7 +122,10 @@ jQuery(function ($) {
 
 	function addItemHtmlToWishList(product, wishlist) {
 		var $wishlistHtml = $("ul.wishlist");
-		$wishlistHtml.append('<li data-product-slug="' + product.slug + '"> <div class="row wishlist-item"> <img src="' + product.image + '" alt=""/> <p class="title text-1">' + product.name + '</p></div></li>');
+		$wishlistHtml.append('<li data-product-slug="' + product.slug + '"> ' +
+			'<div class="row wishlist-item">' +
+			'<img class="col-lg-6" src="' + product.image + '" alt=""/> ' +
+			'<p class="col-lg-6 text-center vertically-center title text-1">' + product.name + '</p></div></li>');
 		$('.wishlist-container .number-of-products').html(wishlist.length);
 		if (wishlist.length >= 1) {
 			$('.wishlist-container .heart').addClass('liked');
@@ -138,7 +141,8 @@ jQuery(function ($) {
 		}
 	}
 
-	if ($('body.blog').length) {
+	if ($('body.blog').length)
+	{
 		$('.pagination .page-item a').on('click', function (event) {
 
 			event.preventDefault();
@@ -157,6 +161,7 @@ jQuery(function ($) {
 				data: ({
 					_token: $('meta[name="csrf-token"]').attr('content'),
 					category: (parseInt($('.categories-widget .category.active').length) >= 1 ? $('.categories-widget .category.active').attr('href') : ''),
+					tag: (parseInt($('.tags-widget .tag.active').length) >= 1 ? $('.tags-widget .tag.active').attr('href') : ''),
 					postPrePage: $('ul.pagination').attr('data-post-pre-page'),
 					page: $currentpage.attr('href')
 				}),
@@ -196,11 +201,12 @@ jQuery(function ($) {
 
 			$.ajax({
 				method: "POST",
-				url:  '/post/category',
+				url: home_url + '/blog/get/posts',
 				type: 'POST',
 				data: ({
 					_token: $('meta[name="csrf-token"]').attr('content'),
 					category: currentCategory.attr('href'),
+					tag: (parseInt($('.tags-widget .tag.active').length) >= 1 ? $('.tags-widget .tag.active').attr('href') : ''),
 					postPrePage: $('ul.pagination').attr('data-post-pre-page'),
 					page: (parseInt($('.pagination .page-item a.active').length) >= 1 ? $('.pagination .page-item a.active').attr('href') : 1)
 				}),
@@ -225,6 +231,49 @@ jQuery(function ($) {
 			});
 		});
 
+		$('.tags-widget .tag').on('click', function (event) {
+
+			event.preventDefault();
+
+			var currentTag = $(this);
+
+			$.ajaxSetup({
+				headers: {
+					'X-XSRF-Token': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				method: "POST",
+				url: home_url + '/blog/get/posts',
+				type: 'POST',
+				data: ({
+					_token: $('meta[name="csrf-token"]').attr('content'),
+					category: (parseInt($('.categories-widget .category.active').length) >= 1 ? $('.categories-widget .category.active').attr('href') : ''),
+					tag: currentTag.attr('href'),
+					postPrePage: $('ul.pagination').attr('data-post-pre-page'),
+					page: (parseInt($('.pagination .page-item a.active').length) >= 1 ? $('.pagination .page-item a.active').attr('href') : 1)
+				}),
+				cache: false,
+
+				beforeSend: function () {
+
+				},
+
+				success: function (response) {
+					var postsHtnnl = blogPostsTemplate(response.posts);
+					$('.tags-widget .tag').removeClass('active');
+					currentTag.addClass('active');
+					$('body.blog section.blog .posts').empty().append(postsHtnnl);
+				},
+
+				error: function (jqXHR, textStatus, errorThrown) {
+					console.log(jqXHR);
+					console.log(textStatus);
+					console.log(errorThrown);
+				}
+			});
+		});
 
 	}
 

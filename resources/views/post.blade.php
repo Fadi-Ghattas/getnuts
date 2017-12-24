@@ -88,7 +88,6 @@
                         <div class="card-body">
                             @foreach($relatedPosts as $post)
                                 <div class="related-post row">
-
                                     <div class="image zoom-effect col-md-6">
                                         <div class="thumbnail">
                                             <a href="{{$post->slug}}">
@@ -99,7 +98,7 @@
 
                                     <div class="content col-md-6">
                                         <a href="{{$post->slug}}">
-                                            <h4>{{$post->title}}</h4>
+                                            <h4 class="green">{{$post->title}}</h4>
                                         </a>
                                             <div class="description gray text-1">
                                                 @php
@@ -111,7 +110,6 @@
                                                 @endphp
                                                 {!! $excerpt !!}
                                             </div>
-
                                     </div>
                                 </div>
                             @endforeach

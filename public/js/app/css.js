@@ -60,7 +60,10 @@ jQuery(function ($) {
 			}
 			wishlist.forEach(function (product) {
 				$("a[data-product-slug='" + product.slug + "']").addClass('liked');
-				$wishlistHtml.append('<li data-product-slug="' + product.slug + '"> <div class="row wishlist-item"> <img src="' + product.image + '" alt=""/> <p class="title text-1">' + product.name + '</p></div></li>');
+				$wishlistHtml.append('<li data-product-slug="' + product.slug + '"> ' +
+					'<div class="row wishlist-item">' +
+					'<img class="col-lg-6" src="' + product.image + '" alt=""/> ' +
+					'<p class="col-lg-6 vertically-center text-center title text-1">' + product.name + '</p></div></li>');
 			});
 
 			$('.wishlist-container .number-of-products').html(wishlist.length);
@@ -281,6 +284,48 @@ jQuery(function ($) {
 		]
 	};
 	$mixesCarousel = slickCarousel('mixes-slider', $mixesCarouselOptions);
+
+
+	// var $giftBoxesCarousel;
+	// var $giftBoxesCarouselOptions = {
+	// 	infinite: false,
+	// 	slidesToShow: 1,
+	// 	slidesToScroll: 1,
+	// 	autoplay: false,
+	// 	fade: true,
+	// 	cssEase: 'linear',
+	// 	arrows: true,
+	// 	dots: false,
+	// 	slide: 'div.mix',
+	// 	track: 'div.mix',
+	// 	prevArrow: $('.mixes-slider-wrapper .prev'),
+	// 	nextArrow: $('.mixes-slider-wrapper .next'),
+	// 	pauseOnHover: true,
+	// 	//mobileFirst: true,
+	// 	// rows: 2,
+	// 	// slidesPerRow: 4,
+	// 	// variableWidth: true,
+	// 	// draggable: true,
+	// 	// centerMode: true,
+	// 	// swipeToSlide: true
+	// 	//adaptiveHeight: true,
+	// 	//	onInit: function(){
+	// 	//console.log(2);
+	// 	// This runs after the slickgrid is first initialized.
+	// 	//this.$list.css('height',this.$slider.parents('.inner').outerHeight(true))
+	// 	//}
+	// 	responsive: [
+	// 		{
+	// 			breakpoint: 991,
+	// 			settings: {
+	// 				arrows: false,
+	// 				prevArrow: false,
+	// 				nextArrow: false
+	// 			}
+	// 		},
+	// 	]
+	// };
+	// $giftBoxesCarousel = slickCarousel('gift-boxes', $giftBoxesCarouselOptions);
 
 });
 

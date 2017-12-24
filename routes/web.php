@@ -22,11 +22,10 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/gift-box', 'PageController@giftBox')->name('giftBox');
 
 	//ajax
-	Route::post('blog/get/posts', 'BlogController@getBlogPosts');
-	Route::post('post/category', 'PostController@getPostsByCategory');
+	Route::post('/blog/get/posts', 'BlogController@getBlogPosts');
 
 	//single
-	Route::get('post/{slug}', 'PostController@show');
+	Route::get('/post/{slug}', 'PostController@show');
 });
 
 Route::group(['prefix' => 'admin'], function () {

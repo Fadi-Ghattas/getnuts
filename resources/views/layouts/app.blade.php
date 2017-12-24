@@ -26,6 +26,7 @@
 <body @unless(empty($body_class)) class="{{$body_class}}" @endunless>
 
    {{menu('Top Nav', 'includes.top-nav')}}
+
     @yield('content')
 
     @include('includes.footer')

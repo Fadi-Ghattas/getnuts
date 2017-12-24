@@ -112,7 +112,7 @@
 
             <div class="clear"></div>
 
-            <div class=" row products products-slider" data-slider-name="products-slider">
+            <div class="row products products-slider" data-slider-name="products-slider">
                 @foreach($products as $product)
                     <div class="col-lg-3 product zoom-effect {{ $product->category()->first()->slug  }}">
                         <div class="thumbnail">

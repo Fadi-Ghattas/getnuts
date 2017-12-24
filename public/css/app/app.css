@@ -689,13 +689,25 @@ nav.top-nav .navbar-nav .wishlist-container  a.nav-link {
 .wishlist-item {
     margin: 0;
 }
+
+.wishlist-item img,
+.wishlist-item .title {
+    padding: 0;
+}
 .wishlist-item img {
-    width: 80px;
-    float: left;
     height: 100%;
 }
 .wishlist-item title {
     float: left;
+}
+
+.wishlist-menu {
+    left: -5vw;
+    padding: .5rem 0.5rem;
+    min-width: 12rem;
+}
+ul.wishlist li:not(:last-child) {
+    border-bottom: solid 1px #e3e3e3;
 }
 @keyframes pump {
     0% {
@@ -737,7 +749,7 @@ nav.top-nav .navbar-nav a.nav-link {
     text-align: center;
     font-family: '__Roboto_5';
     font-weight: 500;
-    padding: 8px 16.5px;
+    padding: 8px 9.5px;
 }
 nav.top-nav .navbar-nav a.nav-link.active,
 nav.top-nav .navbar-nav a.nav-link:hover
@@ -1318,8 +1330,35 @@ body.gift-box .page-banner {
     background-attachment: fixed;
 }
 
+section.gifts-boxes {
+    padding: 60px 0;
+}
+section.gifts-boxes .the-story {
+    margin-bottom: 60px;
+}
+
 .gift-box-gallery .fancybox span {
     visibility: visible;
+}
+
+.gift-boxes .gift-box a {
+    width: 72.2%;
+    margin: 0 auto;
+}
+
+.gift-boxes .gift-box a img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gift-boxes .prev {
+    top: 44.2%;
+    right: 91%;
+}
+
+.gift-boxes .next {
+    top: 44.2%;
+    left: 91%;
 }
 /*Gift Box End*/
 
@@ -1385,16 +1424,19 @@ section.post .content p {
 .related-posts-widget .related-post.row {
     padding: 15px 0;
 }
-
 .related-posts-widget .related-post a {
     display: inline-block;
     color: #6CAB45;
 }
-
 .related-posts-widget .related-post a:hover {
     opacity: 0.8;
 }
 
+.tags-widget .tag.active {
+    text-decoration: none;
+    outline: none;
+    color: #6CAB45;
+}
     /*Blog End*/
 
 /*Footer Start*/
@@ -1579,6 +1621,11 @@ footer .copy-rights {
     section.contact-us {
         padding: 86px 0 34px 0px;
     }
+
+    section.products .products .product .thumbnail .heart-container {
+        top: 73%;
+        left: 73%;
+    }
 }
 
 
@@ -1679,13 +1726,16 @@ footer .copy-rights {
         transform: translateY(-50%);
     }
 
-
     #contact-form .form-group {
         padding: 0;
     }
 
     section.contact-us .contact-form h1.title {
         padding: 0;
+    }
+
+    .wishlist-container {
+        display: none;
     }
 
     /*footer*/
@@ -1751,6 +1801,13 @@ footer .copy-rights {
 
 }
 
+@media (max-width: 576px) {
+    .find-us {
+        text-align: center;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+    }
+}
 
 @media (max-width: 575px) {
 

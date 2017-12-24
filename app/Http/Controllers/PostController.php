@@ -3,27 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use TCG\Voyager\Models\Category;
-use TCG\Voyager\Models\Post;
+use App\Post;
 
 class PostController extends Controller
 {
-
-	public function getPostsByCategory(Request $request)
-	{
-		if ($request->Ajax() && $request->isMethod('post')) {
-			$response = [];
-			$category = Category::where('slug', '=', $request->input('category'))->firstOrFail();
-			$posts = Post::where('category_id', '=', $category->id)
-				->limit($request->input('postPrePage'))
-				->offset(($request->input('page') - 1) * $request->input('postPrePage'))
-				->orderby('created_at', 'desc')
-				->get();
-			$response['posts'] = \App\Post::toJsJson($posts);
-			return response()->json($response);
-		}
-	}
-
 	/**
 	 * Display a listing of the resource.
 	 *

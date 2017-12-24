@@ -18,7 +18,7 @@
                 <ul class="navbar-nav">
                     @foreach($items as $menu_item)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ $menu_item->url }}"> {{ $menu_item->title }} </a>
+                            <a class="nav-link" href="{{url($menu_item->url)}}"> {{ $menu_item->title }} </a>
                         </li>
                     @endforeach
 
@@ -60,14 +60,14 @@
                             </div>
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="wishlist">
+                        <div class="dropdown-menu wishlist-menu" aria-labelledby="wishlist">
                             <ul class="wishlist">
-                                {{--<li>--}}
-                                {{--<div class="row wishlist-item">--}}
-                                {{--<img src="http://getnuts.develop//storage/products/December2017/JACWYC3d1uzSvdLMbQov-cropped.jpg" alt=""/>--}}
-                                {{--<p class="title text-1">Peanuts</p>--}}
-                                {{--</div>--}}
-                                {{--</li>--}}
+                                <li>
+                                <div class="row wishlist-item">
+                                <img src="http://getnuts.develop//storage/products/December2017/JACWYC3d1uzSvdLMbQov-cropped.jpg" alt=""/>
+                                <p class="title text-1">Peanuts</p>
+                                </div>
+                                </li>
                             </ul>
                         </div>
 

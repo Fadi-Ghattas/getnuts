@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers;
+
 use Illuminate\Http\Request;
-use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\Category;
-use TCG\Voyager\Models\Post;
+use App\Post;
 
 class BlogController extends Controller
 {
@@ -15,21 +13,8 @@ class BlogController extends Controller
 	{
 		if ($request->Ajax() && $request->isMethod('post')) {
 			$response = [];
-			if (!empty($request->input('category'))) {
-				$category = Category::where('slug', '=', $request->input('category'))->firstOrFail();
-				$posts = Post::where('category_id', '=', $category->id)
-					->limit($request->input('postPrePage'))
-					->offset(($request->input('page') - 1) * $request->input('postPrePage'))
-					->orderby('created_at', 'desc')
-					->get();
-			} else {
-				$posts = Post::limit($request->input('postPrePage'))
-					->offset(($request->input('page') - 1) * $request->input('postPrePage'))
-					->orderby('created_at', 'desc')
-					->get();
-			}
-
-			$response['posts'] = \App\Post::toJsJson($posts);
+			$posts = Post::filterPosts($request->input('page'),$request->input('postPrePage'), $request->input('category'),  $request->input('tag'));
+			$response['posts'] = Post::toJsJson($posts);
 			return response()->json($response);
 		}
 	}

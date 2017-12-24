@@ -84,10 +84,9 @@
                         <h5 class="card-header">Categories</h5>
                         <div class="card-body">
                             <div class="row">
-                                @php
-                                    $len = count($postsCategories);
-                                    $firstCategoriesSet = array_slice($postsCategories, 0,  $len / 2);
-                                    $secondCategoriesSet = array_slice($postsCategories, $len / 2);
+                                @php;
+                                    $firstCategoriesSet = array_splice($postsCategories, 0, ceil(count($postsCategories)/2));
+                                    $secondCategoriesSet = $postsCategories;
                                 @endphp
                                 <div class="col-lg-6">
                                     <ul class="list-unstyled mb-0">
@@ -111,8 +110,41 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Categories Widget -->
 
-                    <!-- Side Widget -->
+                    <!-- Tags Widget -->
+                    <div class="card my-4 tags-widget">
+                        <h5 class="card-header">Tags</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                @php
+                                    $firstTagsSet = array_splice($postsTags, 0, ceil(count($postsTags)/2));
+                                    $secondTagsSet = $postsTags;
+                                @endphp
+                                <div class="col-lg-6">
+                                    <ul class="list-unstyled mb-0">
+                                        @foreach($firstTagsSet as $tag)
+                                            <li>
+                                                <a class="tag" href="{{$tag['name']}}">#{{$tag['name']}}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6">
+                                    <ul class="list-unstyled mb-0">
+                                        @foreach($secondTagsSet as $tag)
+                                            <li>
+                                                <a class="tag" href="{{$tag['name']}}">#{{$tag['name']}}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tags Widget -->
+
                     {{--<div class="card my-4">--}}
                         {{--<h5 class="card-header">Side Widget</h5>--}}
                         {{--<div class="card-body">--}}

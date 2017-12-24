@@ -37,27 +37,29 @@
                 <li class="info links col-sm-6 col-md-6 col-lg-4">
                     <a class="text-center header quick-links"  href=""> <h3 class="brown font-weight-700">Quick Links</h3></a>
 
-                    <ul class="row">
-                        <li class="col-sm-6 col-md-6 col-lg-6">
-                            <ul>
-                                <li class="page"><span class="dot"></span><p><a href="">Home</a></p></li>
-                                <li class="page"><span class="dot"></span><p><a href="">ِAbout</a></p></li>
-                                <li class="page"><span class="dot"></span><p><a href="">Products</a></p></li>
-                                <li class="mixes"><p><a href="">Mixes</a></p></li>
-                                <li class="product-category"><p><a href="">Nuts</a></p></li>
-                            </ul>
-                        </li>
-                        <li class="col-sm-6 col-md-6 col-lg-6">
-                            <ul>
-                                <li class="product-category"><p><a href="">Dried Fruits</a></p></li>
-                                <li class="product-category"><p><a href="">grains & seeds</a></p></li>
-                                <li class="product-category"><p><a href="">homemade</a></p></li>
-                                <li class="product-category"><p><a href="">flour</a></p></li>
-                                <li class="page"><span class="dot"></span><p><a href="">contact us</a></p></li>
-                            </ul>
-                        </li>
+                    {{menu('Top Nav', 'includes.footer-menu')}}
+                    {{--<ul class="row">--}}
+                        {{--<li class="col-sm-6 col-md-6 col-lg-6">--}}
+                            {{--<ul>--}}
+                                {{--<li class="page"><span class="dot"></span><p><a href="">Home</a></p></li>--}}
+                                {{--<li class="page"><span class="dot"></span><p><a href="">ِAbout</a></p></li>--}}
+                                {{--<li class="page"><span class="dot"></span><p><a href="">Products</a></p></li>--}}
+                                {{--<li class="mixes"><p><a href="">Mixes</a></p></li>--}}
+                                {{--<li class="product-category"><p><a href="">Nuts</a></p></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="col-sm-6 col-md-6 col-lg-6">--}}
+                            {{--<ul>--}}
+                                {{--<li class="product-category"><p><a href="">Dried Fruits</a></p></li>--}}
+                                {{--<li class="product-category"><p><a href="">grains & seeds</a></p></li>--}}
+                                {{--<li class="product-category"><p><a href="">homemade</a></p></li>--}}
+                                {{--<li class="product-category"><p><a href="">flour</a></p></li>--}}
+                                {{--<li class="page"><span class="dot"></span><p><a href="">contact us</a></p></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
 
-                    </ul>
+                    {{--</ul>--}}
+
                 </li>
 
             </ul>

@@ -28,7 +28,7 @@
                     <a class="prev"><</a>
 
                     @foreach($mixes as $mix)
-                        <div class="col-lg-12 mix text-center">
+                        <div class="col-lg-12 mix text-center" data-slug="{{$mix->slug}}">
                             <img src="{{Voyager::image($mix->image)}}" alt="" class="img-fluid"/>
                             <div class="content">
                                 <h2 class="font-weight-300 orange">{{$mix->name}}</h2>

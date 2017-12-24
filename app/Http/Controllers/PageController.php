@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
+use App\Gift;
 use App\Mix;
 use App\Product;
 use App\ProductCategory;
 use App\Helpers;
+use App\Tag;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Models\Category;
@@ -23,8 +25,7 @@ class PageController extends Controller
 		$productCategories = ProductCategory::all();
 		$productsJson = Product::toJsJson($products);
 		$mixes = Mix::all();
-
-		return view('home', compact('bodyClass', 'mixes',  'products', 'productCategories', 'productsJson', 'PageTitle'));
+		return view('home', compact('bodyClass', 'mixes', 'products', 'productCategories', 'productsJson', 'PageTitle'));
 	}
 
 	public function about()
@@ -68,17 +69,20 @@ class PageController extends Controller
 		$postPearPage = 3;
 		$posts = Post::limit($postPearPage)->offset(0)->orderby('created_at', 'desc')->get();
 		$postsCount = Post::all()->count();
-		$postsPagination =  ceil ($postsCount / $postPearPage);
+		$postsPagination = ceil($postsCount / $postPearPage);
 		$postsCategories = Category::all()->toArray();
-		return view('blog', compact('bodyClass', 'PageTitle', 'posts', 'postPearPage', 'postsPagination', 'postsCategories'));
+		$postsTags = Tag::all()->toArray();
+		return view('blog', compact('bodyClass', 'PageTitle', 'posts', 'postPearPage', 'postsPagination', 'postsCategories', 'postsTags'));
 	}
 
 	public function giftBox()
 	{
 		$bodyClass = 'gift-box';
 		$PageTitle = 'Gift Box';
-		return view('gift-box', compact('bodyClass', 'PageTitle'));
+		$giftBoxes = Gift::all();
+		return view('gift-box', compact('bodyClass', 'PageTitle', 'giftBoxes'));
 	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -158,5 +162,6 @@ class PageController extends Controller
 	public function destroy($id)
 	{
 		//
+
 	}
 }
