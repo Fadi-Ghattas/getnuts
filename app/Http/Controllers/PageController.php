@@ -7,12 +7,10 @@ use App\Gift;
 use App\Mix;
 use App\Product;
 use App\ProductCategory;
-use App\Helpers;
 use App\Tag;
 use Illuminate\Http\Request;
-use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Models\Category;
-use TCG\Voyager\Models\Post;
+use App\Post;
 
 class PageController extends Controller
 {
@@ -61,13 +59,14 @@ class PageController extends Controller
 		return view('mixes', compact('bodyClass', 'PageTitle', 'mixes'));
 	}
 
-	public function blog()
+	public function blog(Request $request)
 	{
 		$bodyClass = 'blog';
 		$PageTitle = 'Blog';
 
 		$postPearPage = 3;
-		$posts = Post::limit($postPearPage)->offset(0)->orderby('created_at', 'desc')->get();
+//		$posts = Post::limit($postPearPage)->offset(0)->orderby('created_at', 'desc')->get();
+		$posts =  Post::filterPosts($request->input('page'), $postPearPage, $request->input('category'), $request->input('tag'));
 		$postsCount = Post::all()->count();
 		$postsPagination = ceil($postsCount / $postPearPage);
 		$postsCategories = Category::all()->toArray();

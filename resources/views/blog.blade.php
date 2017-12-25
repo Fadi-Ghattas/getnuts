@@ -49,7 +49,7 @@
 
                         @for($index = 1; $index <= $postsPagination; $index++)
                             <li class="page-item">
-                                <a class="page-link" href="{{$index}}">{{$index}}</a>
+                                <a class="page-link" data-page="{{$index}}" href="{{$index}}">{{$index}}</a>
                             </li>
                         @endfor
                         {{--<li class="page-item">--}}
@@ -92,7 +92,7 @@
                                     <ul class="list-unstyled mb-0">
                                         @foreach($firstCategoriesSet as $category)
                                             <li>
-                                                <a class="category" href="{{$category['slug']}}">{{$category['name']}}</a>
+                                                <a class="category" data-category="{{$category['slug']}}" href="{{$category['slug']}}">{{$category['name']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -101,7 +101,7 @@
                                     <ul class="list-unstyled mb-0">
                                         @foreach($secondCategoriesSet as $category)
                                             <li>
-                                                <a class="category" href="{{$category['slug']}}">{{$category['name']}}</a>
+                                                <a class="category" data-category="{{$category['slug']}}" href="{{$category['slug']}}">{{$category['name']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -125,7 +125,7 @@
                                     <ul class="list-unstyled mb-0">
                                         @foreach($firstTagsSet as $tag)
                                             <li>
-                                                <a class="tag" href="{{$tag['name']}}">#{{$tag['name']}}</a>
+                                                <a class="tag" data-tag="{{$tag['name']}}" href="{{$tag['name']}}">#{{$tag['name']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -134,7 +134,7 @@
                                     <ul class="list-unstyled mb-0">
                                         @foreach($secondTagsSet as $tag)
                                             <li>
-                                                <a class="tag" href="{{$tag['name']}}">#{{$tag['name']}}</a>
+                                                <a class="tag" data-tag="{{$tag['name']}}" href="{{$tag['name']}}">#{{$tag['name']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>

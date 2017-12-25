@@ -86,25 +86,17 @@ jQuery(function ($) {
 			Cookies.set('wishlist', JSON.stringify(wishlist), {expires: 7, path: '/'});
 			addRemoveFromToWishListAnim(click);
 			addItemHtmlToWishList(product, wishlist);
-			console.log('list created');
-			console.log(Cookies.get('wishlist'));
 		} else {
 			var wishlist = $.parseJSON(Cookies.get('wishlist'));
-			console.log(wishlist);
 			if (checkIfObjectInArray(wishlist, 'slug', product.slug)) {
 				wishlist = removeObjectFromArray(wishlist, 'slug', product.slug);
 				removeItemHtmlToWishList(product, wishlist);
-				console.log('removed');
-				console.log(wishlist);
 			} else {
 				wishlist.push(product);
 				addItemHtmlToWishList(product, wishlist);
-				console.log('added to list');
-				console.log(wishlist);
 			}
 			addRemoveFromToWishListAnim(click);
 			Cookies.set('wishlist', JSON.stringify(wishlist));
-			console.log(Cookies.get('wishlist'));
 		}
 	}
 
@@ -141,13 +133,80 @@ jQuery(function ($) {
 		}
 	}
 
-	if ($('body.blog').length)
-	{
-		$('.pagination .page-item a').on('click', function (event) {
+	function getUrlParameter(sPageURL, sParam) {
+		var sPageURL = decodeURIComponent(sPageURL.search.substring(1)),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
 
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : sParameterName[1];
+			}
+		}
+	};
+
+
+	function loadBlogparameters() {
+
+		var currentUrl = window.location;
+		var paramPage = getUrlParameter(currentUrl, 'page');
+		var paramCategory = getUrlParameter(currentUrl, 'category');
+		var paramTag = getUrlParameter(currentUrl, 'tag');
+
+		if (!isEmpty(paramPage)) {
+			$('.pagination .page-item a[data-page="'+paramPage+'"]').addClass('active');
+		}
+		if (!isEmpty(paramCategory)) {
+			$('.categories-widget .category[data-category="'+paramCategory+'"]').addClass('active');
+		}
+		if (!isEmpty(paramTag)) {
+			$('.tags-widget .tag[data-tag="'+paramTag+'"]').addClass('active');
+		}
+	}
+
+	function setBlogSearchUrl(page, category, tag) {
+
+		var searchUrl = '';
+
+		if (page.length) {
+			searchUrl = '?page=' + page;
+		}
+		if (category.length) {
+			if (searchUrl.length) {
+				searchUrl += '&category=' + category;
+			} else {
+				searchUrl = '?category=' + category;
+			}
+		}
+		if (tag.length) {
+			if (searchUrl.length) {
+				searchUrl += '&tag=' + tag;
+			} else {
+				searchUrl = '?tag=' + tag;
+			}
+		}
+
+		console.log(searchUrl);
+		window.history.pushState('', $('title').text(), window.location.href.split('?')[0] + searchUrl);
+	}
+
+	if ($('body.blog').length) {
+
+		loadBlogparameters();
+
+		$('.pagination .page-item a').on('click', function (event) {
 			event.preventDefault();
+
 			var $currentpage = $(this);
-			console.log($('.categories-widget .category.active').attr('href'));
+			var _category = (parseInt($('.categories-widget .category.active').length) >= 1 ? $('.categories-widget .category.active').attr('href') : '');
+			var _tag = (parseInt($('.tags-widget .tag.active').length) >= 1 ? $('.tags-widget .tag.active').attr('href') : '');
+			var _page = $currentpage.attr('href');
+
+			setBlogSearchUrl(_page, _category, _tag);
+
 			$.ajaxSetup({
 				headers: {
 					'X-XSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -160,10 +219,10 @@ jQuery(function ($) {
 				type: 'POST',
 				data: ({
 					_token: $('meta[name="csrf-token"]').attr('content'),
-					category: (parseInt($('.categories-widget .category.active').length) >= 1 ? $('.categories-widget .category.active').attr('href') : ''),
-					tag: (parseInt($('.tags-widget .tag.active').length) >= 1 ? $('.tags-widget .tag.active').attr('href') : ''),
+					category: _category,
+					tag: _tag,
 					postPrePage: $('ul.pagination').attr('data-post-pre-page'),
-					page: $currentpage.attr('href')
+					page: _page
 				}),
 				cache: false,
 
@@ -193,6 +252,12 @@ jQuery(function ($) {
 
 			var currentCategory = $(this);
 
+			var _category = currentCategory.attr('href');
+			var _tag = (parseInt($('.tags-widget .tag.active').length) >= 1 ? $('.tags-widget .tag.active').attr('href') : '');
+			var _page = (parseInt($('.pagination .page-item a.active').length) >= 1 ? $('.pagination .page-item a.active').attr('href') : 1);
+
+			setBlogSearchUrl(_page, _category, _tag);
+
 			$.ajaxSetup({
 				headers: {
 					'X-XSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -205,10 +270,10 @@ jQuery(function ($) {
 				type: 'POST',
 				data: ({
 					_token: $('meta[name="csrf-token"]').attr('content'),
-					category: currentCategory.attr('href'),
-					tag: (parseInt($('.tags-widget .tag.active').length) >= 1 ? $('.tags-widget .tag.active').attr('href') : ''),
+					category: _category,
+					tag: _tag,
 					postPrePage: $('ul.pagination').attr('data-post-pre-page'),
-					page: (parseInt($('.pagination .page-item a.active').length) >= 1 ? $('.pagination .page-item a.active').attr('href') : 1)
+					page: _page
 				}),
 				cache: false,
 
@@ -236,6 +301,12 @@ jQuery(function ($) {
 			event.preventDefault();
 
 			var currentTag = $(this);
+
+			var _category = (parseInt($('.categories-widget .category.active').length) >= 1 ? $('.categories-widget .category.active').attr('href') : '');
+			var _tag = currentTag.attr('href');
+			var _page = (parseInt($('.pagination .page-item a.active').length) >= 1 ? $('.pagination .page-item a.active').attr('href') : 1);
+
+			setBlogSearchUrl(_page, _category, _tag);
 
 			$.ajaxSetup({
 				headers: {

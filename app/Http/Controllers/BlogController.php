@@ -13,7 +13,7 @@ class BlogController extends Controller
 	{
 		if ($request->Ajax() && $request->isMethod('post')) {
 			$response = [];
-			$posts = Post::filterPosts($request->input('page'),$request->input('postPrePage'), $request->input('category'),  $request->input('tag'));
+			$posts = Post::filterPosts($request->input('page'), $request->input('postPrePage'), $request->input('category'), $request->input('tag'));
 			$response['posts'] = Post::toJsJson($posts);
 			return response()->json($response);
 		}

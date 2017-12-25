@@ -1,4 +1,3 @@
-
 var amountScrolled = 200;
 $(window).on('scroll', function (e) {
 	if ($(window).scrollTop() > amountScrolled) {
@@ -230,20 +229,38 @@ jQuery(function ($) {
 		]
 	};
 	var productSlider = 'products-slider';
-	$('body').find("[data-slider-name='" + productSlider + "']").on('init reInit', function(event, slick, direction){
+	$('body').find("[data-slider-name='" + productSlider + "']").on('init reInit', function (event, slick, direction) {
 		loadWishlist();
 	});
 	$productsCarousel = slickCarousel(productSlider, $productsCarouselOptions);
+
 	$('section.products .filters .filter a').on('click', function (event) {
 		event.preventDefault();
-		$('section.products .filters .filter a').removeClass('active');
-		$(this).addClass('active');
-		destroyCarousel($productsCarousel);
-		var filteredProducts = filter(products, '_category', [$(this).attr('data-type')]);
-		$productsCarousel.append(productsSliderTemplate(filteredProducts));
-		$productsCarousel = slickCarousel($productsCarousel.attr('data-slider-name'), $productsCarouselOptions);
+		if ($('body.products').length) {
+			window.location.hash = $(this).attr('data-type');
+		}
+		filterProducts($(this).attr('data-type'));
 	});
 
+	if ($('body.products').length) {
+
+		var hashCategory = window.location.hash.substring(1);
+		if (hashCategory.length) {
+			filterProducts(hashCategory);
+		}
+	}
+
+	function filterProducts(category)
+	{
+		$('section.products .filters .filter a').removeClass('active');
+		$('.filters .filter a[data-type="' + category + '"]').addClass('active');
+		destroyCarousel($productsCarousel);
+		var filteredProducts = filter(products, '_category', [category]);
+		$productsCarousel.append(productsSliderTemplate(filteredProducts));
+		$productsCarousel = slickCarousel($productsCarousel.attr('data-slider-name'), $productsCarouselOptions);
+	}
+
+	var mixesSlider = 'mixes-slider'
 	var $mixesCarousel;
 	var $mixesCarouselOptions = {
 		infinite: false,
@@ -283,60 +300,14 @@ jQuery(function ($) {
 			},
 		]
 	};
-	$mixesCarousel = slickCarousel('mixes-slider', $mixesCarouselOptions);
 
+	$mixesCarousel = slickCarousel(mixesSlider, $mixesCarouselOptions);
 
-	// var $giftBoxesCarousel;
-	// var $giftBoxesCarouselOptions = {
-	// 	infinite: false,
-	// 	slidesToShow: 1,
-	// 	slidesToScroll: 1,
-	// 	autoplay: false,
-	// 	fade: true,
-	// 	cssEase: 'linear',
-	// 	arrows: true,
-	// 	dots: false,
-	// 	slide: 'div.mix',
-	// 	track: 'div.mix',
-	// 	prevArrow: $('.mixes-slider-wrapper .prev'),
-	// 	nextArrow: $('.mixes-slider-wrapper .next'),
-	// 	pauseOnHover: true,
-	// 	//mobileFirst: true,
-	// 	// rows: 2,
-	// 	// slidesPerRow: 4,
-	// 	// variableWidth: true,
-	// 	// draggable: true,
-	// 	// centerMode: true,
-	// 	// swipeToSlide: true
-	// 	//adaptiveHeight: true,
-	// 	//	onInit: function(){
-	// 	//console.log(2);
-	// 	// This runs after the slickgrid is first initialized.
-	// 	//this.$list.css('height',this.$slider.parents('.inner').outerHeight(true))
-	// 	//}
-	// 	responsive: [
-	// 		{
-	// 			breakpoint: 991,
-	// 			settings: {
-	// 				arrows: false,
-	// 				prevArrow: false,
-	// 				nextArrow: false
-	// 			}
-	// 		},
-	// 	]
-	// };
-	// $giftBoxesCarousel = slickCarousel('gift-boxes', $giftBoxesCarouselOptions);
+	if ($('.our-mixes').length) {
+		var hashMix = window.location.hash.substring(1);
+		if (hashMix.length) {
+			$mixesCarousel.slick('slickGoTo', $('.slick-slide[data-slug="' + hashMix + '"]').attr('data-slick-index'));
+		}
+	}
 
 });
-
-// $(window).on('load', function () {
-//
-//
-// });
-
-// Back To Top
-// Distance from top -
-//
-// $(window).scroll(function () {
-//
-// });

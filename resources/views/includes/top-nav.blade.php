@@ -18,7 +18,7 @@
                 <ul class="navbar-nav">
                     @foreach($items as $menu_item)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url($menu_item->url)}}"> {{ $menu_item->title }} </a>
+                            <a class="nav-link" data-f="" href="{{url($menu_item->url)}}"> {{ $menu_item->title }} </a>
                         </li>
                     @endforeach
 
