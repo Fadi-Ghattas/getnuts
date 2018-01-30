@@ -18,14 +18,14 @@
                 <div class="col-lg-6 text-center vertically-center background-white the-story">
                     <h1 class="green">Getnuts' Story</h1>
                     <p class="text-1">"Get nuts over our healthy range of nuts"<br/>
-                        Getnuts is a lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac <br/> quam quis urna
-                        gravida efficitur. In aliquet ipsum sit amet bibendum  <br/> elementum.
+                        GetNuts is your address for healthiest, most delicious <br/> and high quality conventional nuts, seeds, trail mixes and dried fruits.
+                        <br/> We care about you!
                     </p>
-                    <p class="text-1">Mauris ac efficitur metus, et euismod justo. Sed commodo sollicitudin <br/> metus at facilisis. Etiam
-                        congue ante vitae fringilla scelerisque. Maecenas <br/> maximus, libero eu fringilla egestas, dolor
-                        eros volutpat odio, et consectetur <br/> eros orci sed risus. Suspendisse nec suscipit leo. Donec
-                        risus metus, rutrum <br/> non elit a, dictum congue elit. Nunc porta id est at placerat. Nam
-                        tristique, <br/> mi quis aliquam dapibus, nulla mi accumsan ipsum, eu venenatis diam <br/> massa id leo.
+                    <p class="text-1">This is the reason why we never settle for less to offer you only the best.
+                        <br/> In GetNuts we always grow the highest quality products.
+                        <br/> Our endless passion to explore the best leads us to always surprise our customers
+                        <br/> with unique and most functional assortments with high flexibility without sacrificing from our high-quality standards.
+                        <br/> Our vision of providing smart eating decisions for everyone in your family is ultimately underlined by our passion for natural & healthier foods.
                     </p>
                 </div>
 
