@@ -18,21 +18,22 @@
 
 
                     <div class="col-lg-12 text-center vertically-center the-story">
-                        <h1 class="green">Getnuts' Story</h1>
-                        <p class="text-1">"Get nuts over our healthy range of nuts"<br/>
-                            Getnuts is a lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac <br/> quam
-                            quis urna
-                            gravida efficitur. In aliquet ipsum sit amet bibendum <br/> elementum.
+                        <h1 class="green">Our Gift Box</h1>
+                        <p class="text-1">
+                            <span class="br-mob">You can Now customize your own gift Box for your loved ones!</span> <br/>
+                            The steps you need to follow are simple and easy:
                         </p>
-                        <p class="text-1">Mauris ac efficitur metus, et euismod justo. Sed commodo sollicitudin <br/>
-                            metus at facilisis. Etiam
-                            congue ante vitae fringilla scelerisque. Maecenas <br/> maximus, libero eu fringilla
-                            egestas, dolor
-                            eros volutpat odio, et consectetur <br/> eros orci sed risus. Suspendisse nec suscipit leo.
-                            Donec
-                            risus metus, rutrum <br/> non elit a, dictum congue elit. Nunc porta id est at placerat. Nam
-                            tristique, <br/> mi quis aliquam dapibus, nulla mi accumsan ipsum, eu venenatis diam <br/>
-                            massa id leo.
+                        <p class="text-1">
+                            1. you choose the products you want
+                        </p>
+                        <p class="text-1">
+                            2. you choose the theme of the box (holiday, birthday,...)
+                        </p>
+                        <p class="text-1">
+                            3. give us a call on <a class="tel" href="tel:+96170145557">+ 961 70 145 557</a> or <a class="tel" href="tel:+9614400671">+ 961 4 400 671</a> to order your special gift.
+                        </p>
+                        <p class="text-1">
+                            You can even choose an already customized done gift box.
                         </p>
                     </div>
 

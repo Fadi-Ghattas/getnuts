@@ -203,7 +203,7 @@ jQuery(function ($) {
 		responsive: [
 
 			{
-				breakpoint: 991,
+				breakpoint: 992,
 				settings: {
 					arrows: false,
 					rows: 3,
@@ -224,6 +224,14 @@ jQuery(function ($) {
 					arrows: false,
 					rows: 4,
 					slidesPerRow: 2,
+				}
+			},
+			{
+				breakpoint: 505,
+				settings: {
+					arrows: false,
+					rows: 8,
+					slidesPerRow: 1,
 				}
 			},
 		]

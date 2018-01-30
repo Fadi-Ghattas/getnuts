@@ -16,11 +16,8 @@
                     <h1 class="title green italic font-weight-700">Welcome to Getnuts</h1>
                     <p class="description text-1">
                         <span class="italic">"Get nuts over our healthy range of nuts"</span>
-                        <br/>
-                        Getnuts is a lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                        gravida
-                        <br/>
-                        efficitur. In aliquet ipsum sit amet bibendum elementum.
+                        Getnuts is your address for healthiest, most delicious  <br/> and  high quality conventional and organic nuts, seeds, trail mixes and dried fruits
+                        <br/> <a href="{{url('about')}}"> We care about you!</a>
                     </p>
                     <img src="{{url('/images/home/shutterstock.png')}}" class="img-fluid" alt=""/>
                 </div>
@@ -28,39 +25,39 @@
 
             <div class="row features text-center">
 
-                <div class="col-md-4 col-lg-4 feature">
+                <div class="col-4 col-md-4 col-lg-4 feature">
                     <div class="title">
                         <img src="{{url('/images/icons/forma.png')}}" alt="" class="img-fluid"/>
                         <img src="{{url('/images/icons/forma-hover.png')}}" alt="" class="img-fluid hover"/>
                         <h4 class="italic font-weight-700">100% Natural</h4>
                     </div>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                            gravida efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                     <!--   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                            gravida efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-4 feature">
+                <div class="col-4 col-md-4 col-lg-4 feature">
                     <div class="title">
                         <img src="{{url('/images/icons/forma-1-3.png')}}" alt="" class="img-fluid"/>
                         <img src="{{url('/images/icons/forma-1-3-hover.png')}}" alt="" class="img-fluid hover"/>
                         <h4 class="italic">Fresh Indeed</h4>
                     </div>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                            gravida efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                    <!--    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                            gravida efficitur. In aliquet ipsum sit amet bibendum elementum.</p>-->
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-4 feature">
+                <div class="col-4 col-md-4 col-lg-4 feature">
                     <div class="title">
                         <img src="{{url('/images/icons/forma-1-2.png')}}" alt="" class="img-fluid"/>
                         <img src="{{url('/images/icons/forma-1-2-hover.png')}}" alt="" class="img-fluid hover"/>
                         <h4 class="italic">Premium Quality</h4>
                     </div>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                            gravida efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                            gravida efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
                     </div>
                 </div>
 
@@ -98,7 +95,7 @@
 
                 @foreach($productCategories as $category)
 
-                    <div class="filter col">
+                    <div class="filter col-4 col-sm col-md col-lg col-xl">
                         <a href="" data-type="{{ $category->slug }}">
                             <img src="{{ Voyager::image( $category->icon ) }}" alt="" class="img-fluid"/>
                             <img src="{{ Voyager::image( $category->icon_hoverd ) }}" alt="" class="img-fluid hover"/>

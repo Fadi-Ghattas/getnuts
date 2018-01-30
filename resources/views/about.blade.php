@@ -40,43 +40,62 @@
                     <div class="row">
                         <div class="col-md-12 col-lg-12 quality">
                             <div class="row">
-                                <div class="col-md-3 icon text-center">
+
+                                <div class="col-md-3 icon text-center show-mob">
                                     <img src="{{url('/images/icons/forma.png')}}" alt="" class="img-fluid" />
                                     <img src="{{url('/images/icons/forma-hover.png')}}" alt="" class="img-fluid hover"/>
                                 </div>
+
                                 <div class="col-md-9 content">
-                                    <h4>100% Natural</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                                        gravida
-                                        efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                                    <h4 class="text-right-not-mob">100% Natural</h4>
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                                         gravida
+                                         efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
                                 </div>
+
+                                <div class="col-md-3 icon text-center show-desk">
+                                    <img src="{{url('/images/icons/forma.png')}}" alt="" class="img-fluid" />
+                                    <img src="{{url('/images/icons/forma-hover.png')}}" alt="" class="img-fluid hover"/>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-12 quality">
                             <div class="row">
-                                <div class="col-md-3 icon text-center">
+                                <div class="col-md-3 icon text-center show-mob">
                                     <img src="{{url('/images/icons/forma-1-3.png')}}" alt="" class="img-fluid" />
                                     <img src="{{url('/images/icons/forma-1-3-hover.png')}}" alt="" class="img-fluid hover"/>
                                 </div>
+
                                 <div class="col-md-9 content">
-                                    <h4>Fresh Indeed</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                                        gravida
-                                        efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                                    <h4 class="text-right-not-mob">Fresh Indeed</h4>
+                                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                                            gravida
+                                            efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
+                                </div>
+                                <div class="col-md-3 icon text-center show-desk">
+                                    <img src="{{url('/images/icons/forma-1-3.png')}}" alt="" class="img-fluid" />
+                                    <img src="{{url('/images/icons/forma-1-3-hover.png')}}" alt="" class="img-fluid hover"/>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-12 quality">
                             <div class="row">
-                                <div class="col-md-3 icon text-center">
+
+                                <div class="col-md-3 icon text-center show-mob">
                                     <img src="{{url('/images/icons/forma-1-2.png')}}" alt="" class="img-fluid" />
                                     <img src="{{url('/images/icons/forma-1-2-hover.png')}}" alt="" class="img-fluid hover"/>
                                 </div>
+
                                 <div class="col-md-9 content">
-                                    <h4>Premium Quality</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                                        gravida
-                                        efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                                    <h4 class="text-right-not-mob">Premium Quality</h4>
+                                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                                            gravida
+                                            efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
+                                </div>
+                                <div class="col-md-3 icon text-center show-desk">
+                                    <img src="{{url('/images/icons/forma-1-2.png')}}" alt="" class="img-fluid" />
+                                    <img src="{{url('/images/icons/forma-1-2-hover.png')}}" alt="" class="img-fluid hover"/>
                                 </div>
                             </div>
                         </div>
@@ -97,9 +116,9 @@
                                 </div>
                                 <div class="col-md-9 content">
                                     <h4>100% Healthy</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                                        gravida
-                                        efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                                            gravida
+                                            efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
                                 </div>
                             </div>
                         </div>
@@ -111,9 +130,9 @@
                                 </div>
                                 <div class="col-md-9 content">
                                     <h4>No added Salt</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                                        gravida
-                                        efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                                            gravida
+                                            efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
                                 </div>
                             </div>
                         </div>
@@ -125,9 +144,9 @@
                                 </div>
                                 <div class="col-md-9 content">
                                     <h4>No added Sugar</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
-                                        gravida
-                                        efficitur. In aliquet ipsum sit amet bibendum elementum.</p>
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac quam quis urna
+                                         gravida
+                                         efficitur. In aliquet ipsum sit amet bibendum elementum.</p> -->
                                 </div>
                             </div>
                         </div>

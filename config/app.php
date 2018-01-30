@@ -179,6 +179,7 @@ return [
 		TCG\Voyager\VoyagerServiceProvider::class,
 
 		Collective\Html\HtmlServiceProvider::class,
+		Watson\Active\ActiveServiceProvider::class
     ],
 
     /*
@@ -230,6 +231,7 @@ return [
 		'Form' => Collective\Html\FormFacade::class,
 		'HTML' => Collective\Html\HtmlFacade::class,
 		'Helpers' => App\Helpers::class,
+		'Active' => Watson\Active\Facades\Active::class
     ],
 
 ];

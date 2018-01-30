@@ -18,11 +18,17 @@
                             <li class="address"><p class="text-1"><span class="font-weight-500 text-1 green">Address: </span> Metn  -  Mansourieh highway, Facing the Municipality - Ground Floor</p></li>
                             <li class="mobile"><p class="text-1"><span class="font-weight-500 text-1 green">Mobile: </span><a class="tel font-weight-300" href="tel:+96170145557"> + 961 70 145 557</a></p></li>
                             <li class="phone"><p class="text-1"><span class="font-weight-500 text-1 green">Phone: </span><a class="tel font-weight-300" href="tel:+9614400671"> + 961 4 400 671</a></p></li>
+                            <li class="deliver"><p class="text-1"><span class="font-weight-500 text-1 green">WE DELIVER.</span></p></li>
                             <li class="email"><p class="text-1"><span class="font-weight-500 text-1 green">Email: </span><a class="tel font-weight-300" href="mailto:info@shopgetnuts.com">info@shopgetnuts.com</a></p></li>
                             <li>
                                 <ul class="social">
-                                    <li class="facebook"><a href="#"></a></li>
-                                    <li class="instagram"><a href="#"></a></li>
+                                    <li>
+                                        <a class="facebook" href="https://www.facebook.com/pg/shopgetnuts/" target="_blank"></a>
+                                    </li>
+                                    <li class="nav-item social">
+                                        <a class="instagram" href="https://www.instagram.com/shopgetnuts/" target="_blank">
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

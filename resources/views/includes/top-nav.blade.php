@@ -18,7 +18,10 @@
                 <ul class="navbar-nav">
                     @foreach($items as $menu_item)
                         <li class="nav-item">
-                            <a class="nav-link" data-f="" href="{{url($menu_item->url)}}"> {{ $menu_item->title }} </a>
+                            <a class="nav-link {{ active('*' . $menu_item->url) }}"  data-f="" href="{{url($menu_item->url)}}"> {{ $menu_item->title }} </a>
+                            <!--<pre>
+                                {{$menu_item->url}}
+                            </pre>-->
                         </li>
                     @endforeach
 
@@ -42,7 +45,7 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                                <a class="nav-link  {{ active('*/login') }}" href="{{ url('/login') }}">Login</a>
                             </li>
                             {{--<li class="nav-item">--}}
                                 {{--<a class="nav-link" href="{{ url('/register') }}">Register</a>--}}

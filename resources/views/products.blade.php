@@ -23,7 +23,6 @@
 
         <div class="container">
 
-
             <div class="row text-center banner">
                 <div class="col-lg-12">
                     <a href="{{url('/our-mixes')}}">
@@ -44,10 +43,10 @@
 
                 @foreach($productCategories as $category)
 
-                    <div class="filter col">
+                    <div class="filter col-4 col-sm col-md col-lg col-xl">
                         <a href="" data-type="{{ $category->slug }}">
-                            <img src="{{ Voyager::image( $category->icon ) }}" alt="" class=""/>
-                            <img src="{{ Voyager::image( $category->icon_hoverd ) }}" alt="" class="hover"/>
+                            <img src="{{ Voyager::image( $category->icon ) }}" alt="" class="img-fluid"/>
+                            <img src="{{ Voyager::image( $category->icon_hoverd ) }}" alt="" class="img-fluid hover"/>
                             <h5>{{ $category->name }}</h5>
                         </a>
                     </div>
@@ -58,11 +57,14 @@
 
             <div class="clear"></div>
 
-            <div class=" row products products-slider" data-slider-name="products-slider">
+            <div class="row products products-slider" data-slider-name="products-slider">
                 @foreach($products as $product)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 product zoom-effect {{ $product->category()->first()->slug  }}">
+                    <div class="col-lg-3 product zoom-effect {{ $product->category()->first()->slug  }}">
                         <div class="thumbnail">
                             <img src="{{ Helpers::thumbnail(Voyager::image( $product->image), 'cropped') }}" alt="" class="img-fluid fadeIn"/>
+                            <div class="heart-container">
+                                <a data-product-name="{{ $product->name }}" data-product-image="{{ Helpers::thumbnail(Voyager::image( $product->image), 'cropped') }}" data-product-slug="{{ $product->slug  }}" class="add-wishlist heart" href="#" title="Add to my wishlist"></a>
+                            </div>
                         </div>
                         <div class="content">
                             <h3 class="text-center title">{{ $product->name }}</h3>
@@ -72,14 +74,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-
-            <div class="row text-center banner">
-                <div class="col-lg-12">
-                    <a href="{{url('/our-mixes')}}">
-                        <h1 class="green hover-brown italic font-weight-700">Checkout Our Healthy Mixes</h1>
-                    </a>
-                </div>
             </div>
 
         </div>

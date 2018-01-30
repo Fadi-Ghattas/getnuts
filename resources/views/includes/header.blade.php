@@ -13,7 +13,7 @@
 @if($body_class == 'post')
     {{ HTML::style('css/blog/social-icons/scions.css') }}
 @endif
-{{ HTML::style('css/app/app.css') }}
+{{ HTML::style('css/app/app.css?v=2') }}
 {{--@else--}}
 {{--{{ HTML::style('css/blog/bootstrap/bootstrap.min.css') }}--}}
 {{--@endif--}}
